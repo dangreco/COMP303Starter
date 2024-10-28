@@ -1,3 +1,58 @@
+### ⚠️ Usage with Dev Containers:
+
+#### 1. Requirements:
+- VSCode and:
+    - Dev Containers extension (`ms-vscode-remote.remote-containers`)
+- Docker 18.06+
+- Docker Compose 1.21+
+- X11 (or xwayland)
+- xhost
+
+NixOS + home-manager reference:
+
+```nix
+{
+  virtualisation.docker.enable = true;
+}
+```
+
+```nix
+{ pkgs, ... }:
+{
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
+    extensions = with pkgs.vscode-extensions; [
+      mkhl.direnv
+      jnoortheen.nix-ide
+      ms-vscode-remote.remote-containers
+    ];  
+  };
+}
+```
+
+#### 2. Setup
+
+1. Clone the repository: 
+
+```
+git clone https://github.com/dangreco/COMP303Starter.git
+```
+
+2. Checkout the `devenv` branch:
+
+```
+git checkout devenv
+```
+
+3. Authorize X server access:
+
+```
+xhost local:root
+```
+
+4. Build + enter dev container: `Ctrl+Shift+P > Dev Containers: Open Folder in Container` 
+
 # COMP303 Starter Project
 
 Starter project configuration for the course [COMP 303: Software Design](https://github.com/prmr/COMP303)  at McGill University
