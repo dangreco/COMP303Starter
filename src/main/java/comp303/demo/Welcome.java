@@ -102,11 +102,11 @@ public class Welcome extends Application implements EventHandler<ActionEvent>, C
 			switch(aSkin.getSelectedToggle().getUserData().toString())
 			{
 			case "Floral":
-				aScene.getStylesheets().add(Welcome.class.getResource("cs1.css").toExternalForm());
+				aScene.getStylesheets().add(Welcome.class.getResource("/css/cs1.css").toExternalForm());
 				break;
 				
 			case "Chintz":
-				aScene.getStylesheets().add(Welcome.class.getResource("cs2.css").toExternalForm());
+				aScene.getStylesheets().add(Welcome.class.getResource("/css/cs2.css").toExternalForm());
 				break;
 
 			default:

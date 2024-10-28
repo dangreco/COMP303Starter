@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * Unit test for the AlternatingLabelProvider.
  */
-public class TestAlternatingLabelProvider
+public class AlternatingLabelProviderTest
 {
 	private static final String LABEL_1 = "AAA";
 	private static final String LABEL_2 = "BBB";
